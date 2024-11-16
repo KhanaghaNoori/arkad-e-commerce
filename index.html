@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+     <!-- head -->
+  <head>
+      
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font Poppinse -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font League Spartan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/arkad-faveicon.png">
+    <title>arkad</title>
+  </head>
+
+  <body class="showCart">
+
+    
+    <!-- header -->
+    <header>
+      <div class="navbar">
+        <!-- Vedio link to this section: https://www.youtube.com/watch?v=aNDqzlAKmZc -->
+        <div class="off-screen-menu">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                
+                <li>
+                    <a href="electronics.html">Electronics</a>
+                </li>
+                
+                <li>
+                    <a href="clothings.html">Clothings</a>
+                </li>
+            </ul>
+        </div>
+        <nav class="nav-ham-menu">
+            <div class="ham-menu">
+            <span class="hoverspan"></span>
+            <span class="hoverspan"></span>
+            <span class="hoverspan"></span>
+            </div>
+        </nav>
+    </div>
+        <!-- menue and search in the right
+         <div class="section-right ">
+             <div class="search"><i class="fa-solid fa-magnifying-glass"></i></div> -->
+         <!-- </div> -->
+        <!-- logo: in the center-->
+          <div class="header-logo">
+              <a href="index.html"><img class="logo" src="img/arkad-logo.png" alt=""></a>
+          </div>
+              <!-- Order and Card -->
+            <div class="header-account">
+              <!-- I have Chaged the Order to Login and must be the Classes and slectors as well to check and Correct them -->
+               <ul class="user-section">
+                <li><a class="languages" href="#" ><i class="fa-solid fa-language"></i></a></li>
+                <li><a class="user" href="#" ><i class="fa-solid fa-user"></i></a></li>
+                <li><a class="favorate" href="#" ><i class="fa-solid fa-heart"></i></a></li>
+                <li><a class="card" id="cartLink" href="#"><i class="fa-solid fa-bag-shopping"><span>0</span></i></a></li>
+              </ul>
+            </div>
+      </header>
+
+    <main>
+        <!-- Section: #2: hero and intro -->
+        <section class="hero">
+          <div class="intro">
+            <div class="inrotext" id="home">
+              <span>Discover the</span>
+              <h1>Arkad Techs & Cloths</h1>
+              <p>The new era of the tech</p>
+            </div>
+            <!-- cta= Call to action -->
+            <div class="cta">
+              <button class="learn-more">Learn more</button>
+              <button class="add">Add to Cart</button>
+            </div>
+          <!-- image of the person -->
+          <div class="introimg">
+            <img src="img/robot.png" alt="cover" />
+          </div>
+         
+        </div>
+        </section>
+        <!-- background light img -->
+        <img class="bglogoright" src="img-electronics/gagets.png" alt="baground" />
+        <img class="bglogoleft" src="img-electronics/smart-watch.png" alt="baground" />
+        <!-- <img class="bglogoleftdown" src="img-clothings/t-shirt-3.png" alt="baground" /> -->
+   
+        <!-- All Producktes -->
+        <!-- dotw is the deal of the week  -->
+        <section class="dotw" >
+          <ul class="dotwinfo"></ul>
+        </section>
+
+        <section class="electronics-shope">
+          <div class="electorincs-prudunct-1">
+            <!-- <div class="pruducts"> -->
+              <!-- the first section Details up and img bottom -->
+             
+          </div>
+        </section>
+    <!-- Section Colothings -->
+     
+<!-- All Products -->
+ <section class="shopping"> 
+    <div class="sort">
+      <h2>Clothings Products</h2>
+<!-- Copy from Codepen.io: https://codepen.io/lupitadavila/pen/ezbWrw-->
+<div class="container">
+	<div class="row">
+	</div>
+  <div class="products--sorting">
+    <span for="sort">Sort by price:</span>
+    <select id="sort" class="sort--dropdown">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+    </div>
+    </div>
+    <!-- the sort option accourding to alphabet -->
+   
+    <ul class="all-the-products">
+    <!-- Products-->
+</ul>
+</section>
+<!-- section Marketing -->
+<section class="section-marketing">
+    <!-- section: 5 footer -->
+      <img class="footer-logo" src="img/arkad-faveicon.png" alt="">
+      <div class="half-width fs-medium"><h2>SUBSCRIBE & FOLLOW </h2></div>
+
+        <div class="half-width">
+          <div class="center">
+            <img src="img/facebook.png" alt="Facebook"class="footerIcon" />
+            <img src="img/insta.png" alt="Instagram" class="footerIcon" />
+            <img src="img/x.png" alt="" class="footerIcon" />
+          </div>
+          <!-- <form class="footer-form">
+            <input required type="text" class="emailAddress" placeholder="Email Address">
+            <button class="button-footer">SUBMIT</button>
+          </form> -->
+        </div>
+</section>
+<!-- this Part is not Working -->
+<!-- <section class="cart-shoping">
+  <h1>shopping Cart</h1>
+  <div class="listCart">
+    <div class="item">
+        <div class="imag">
+          <img src="/img/hero.png" alt="">
+        </div>
+        <div class="neme">Name</div>
+        <div class="totalprice">200 Euro</div>
+        <div class="quantity">
+          <span class="descrease">-</span>
+          <span class="curentQuantity">1</span>
+          <span class="increase">+</span>
+        </div>
+    </div>
+<div class="item">
+        <div class="imag">
+          <img src="/img/hero.png" alt="">
+        </div>
+        <div class="neme">Name</div>
+        <div class="totalprice">200 Euro</div>
+        <div class="quantity">
+          <span class="descrease">-</span>
+          <span class="curentQuantity">1</span>
+          <span class="increase">+</span>
+        </div>
+    </div>
+  </div>
+  <div class="cart-btn">
+    <button class="btn-close">Close</button>
+    <button class="btn-checkout">Check Out</button>
+  </div>
+  
+
+</section> -->
+
+      </main>
+      <div id="modalCart" class="modal-cart">
+        <div class="modal-cart-content">
+          <span class="modal-cart-close">&times;</span>
+          <h1>Cart</h1>
+          <p>...</p>
+        </div>
+      </div>
+  </body>
+  <script src="script.js"></script> 
+</html>
