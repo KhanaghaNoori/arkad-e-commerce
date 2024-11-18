@@ -313,8 +313,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300);
     }
   });
-  // shopping section and add and buy
 
+  // shopping section and add and buy
   const addToCartButtons = document.querySelectorAll(".product--buy");
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
@@ -341,16 +341,22 @@ document.addEventListener("DOMContentLoaded", () => {
         "</ul>";
     }
   }
+  // the confirmation message
   function displayConfirmation(productName) {
+    // console.log(`Displaying confirmation for: ${productName}`);
     const confirmation = document.createElement("div");
     confirmation.className = "confirmation-message";
     confirmation.textContent = `${productName} has been added to the cart.`;
     document.body.appendChild(confirmation);
+   
     setTimeout(() => {
       confirmation.remove();
     }, 3000);
   }
 });
+// document.addEventListener("DOMContentLoaded", () => {
+//   console.log("DOM fully loaded.");
+// });
 
 
 
