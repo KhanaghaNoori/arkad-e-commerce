@@ -275,7 +275,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //   body.classList.toggle('showCart')
 // })
 
-
 // document.addEventListener("DOMContentLoaded", init);
 
 // MILESTONE 3 suggestions:
@@ -289,18 +288,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartDisplay = document.querySelector(".modal-cart-content p");
   // Open the modal when the cart icon is clicked
   cartLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    modal.style.display = "block"; // Make the modal visible
+    event.preventDefault();
+    modal.style.display = "block"; 
     setTimeout(() => {
-      modal.classList.add("show"); // Add the "show" class for animation
+      modal.classList.add("show"); 
     }, 10);
   });
 
   // Close the modal when the close button is clicked
   closeBtn.addEventListener("click", () => {
-    modal.classList.remove("show"); // Remove the "show" class
+    modal.classList.remove("show"); 
     setTimeout(() => {
-      modal.style.display = "none"; // Hide the modal after animation
+      modal.style.display = "none"; 
     }, 300);
   });
 
@@ -357,8 +356,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // document.addEventListener("DOMContentLoaded", () => {
 //   console.log("DOM fully loaded.");
 // });
-
-
 
 
 // add to cart section
