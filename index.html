@@ -28,7 +28,7 @@
     <title>arkad</title>
   </head>
 
-  <body class="showCart">
+  <body>
 
     
     <!-- header -->
@@ -73,7 +73,9 @@
                 <li><a class="languages" href="#" ><i class="fa-solid fa-language"></i></a></li>
                 <li><a class="user" href="#" ><i class="fa-solid fa-user"></i></a></li>
                 <li><a class="favorate" href="#" ><i class="fa-solid fa-heart"></i></a></li>
-                <li><a class="card" id="cartLink" href="#"><i class="fa-solid fa-bag-shopping"><span>0</span></i></a></li>
+                <!-- the Cart section???? -->
+                <li><a class="card" id="cartIcon" href="#"><i class="fa-solid fa-bag-shopping">
+                  <span>0</span></i></a></li>
               </ul>
             </div>
       </header>
@@ -90,7 +92,6 @@
             <!-- cta= Call to action -->
             <div class="cta">
               <button class="learn-more">Learn more</button>
-              <button class="add">Add to Cart</button>
             </div>
           <!-- image of the person -->
           <div class="introimg">
@@ -200,9 +201,10 @@
       </main>
       <div id="modalCart" class="modal-cart">
         <div class="modal-cart-content">
-          <span class="modal-cart-close">&times;</span>
-          <h1>Cart</h1>
-          <p>...</p>
+          <span class="modal-cart-close">
+            <button class="btn-close">x</button></span>
+          <h1>Shopping Cart</h1>
+          <p>Your Shopping Cart is Empty</p>
         </div>
       </div>
   </body>

@@ -269,73 +269,83 @@ document.addEventListener("DOMContentLoaded", () => {
 // })
 
 
-document.addEventListener("DOMContentLoaded", init);
+// document.addEventListener("DOMContentLoaded", init);
 
 // MILESTONE 3 suggestions:
+//the Cart display and Content section 
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("modalCart");
-  const cartLink = document.getElementById("cartLink");
-  const closeBtn = document.getElementsByClassName("modal-cart-close")[0];
-  const cartItems = [];
-  const cartDisplay = document.querySelector(".modal-cart-content p");
-  cartLink.onclick = function () {
-    modal.style.display = "block";
+  const cartLink = document.getElementById("cartIcon");
+  const closeBtn = document.querySelector(".modal-cart-close");
+
+  // Open the modal when the cart icon is clicked
+  cartLink.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default link behavior
+    modal.style.display = "block"; // Make the modal visible
     setTimeout(() => {
-      modal.classList.add("show");
+      modal.classList.add("show"); // Add the "show" class for animation
     }, 10);
-    updateCartDisplay();
-  };
-  closeBtn.onclick = function () {
-    modal.classList.remove("show");
+  });
+
+  // Close the modal when the close button is clicked
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show"); // Remove the "show" class
     setTimeout(() => {
-      modal.style.display = "none";
+      modal.style.display = "none"; // Hide the modal after animation
     }, 300);
-  };
-  window.onclick = function (event) {
-    if (event.target == modal) {
+  });
+
+  // Close the modal when clicking outside the modal content
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
       modal.classList.remove("show");
       setTimeout(() => {
         modal.style.display = "none";
       }, 300);
     }
-  };
-  const addToCartButtons = document.querySelectorAll(".product--buy");
-  addToCartButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const product = event.target.closest(".product.card");
-      const productName = product.querySelector(".product--name").textContent;
-      const productPrice = product.querySelector(".product--price").textContent;
-      cartItems.push({
-        name: productName,
-        price: productPrice,
-      });
-      displayConfirmation(productName);
-      updateCartDisplay();
-    });
   });
-  function updateCartDisplay() {
-    if (cartItems.length === 0) {
-      cartDisplay.textContent = "Your cart is empty.";
-    } else {
-      cartDisplay.innerHTML =
-        "<ul style='color: red'>" +
-        cartItems
-          .map((item) => `<li>${item.name} - ${item.price}</li>`)
-          .join("") +
-        "</ul>";
-    }
-  }
-  function displayConfirmation(productName) {
-    const confirmation = document.createElement("div");
-    confirmation.className = "confirmation-message";
-    confirmation.textContent = `${productName} has been added to the cart.`;
-    document.body.appendChild(confirmation);
-    setTimeout(() => {
-      confirmation.remove();
-    }, 3000);
-  }
 });
 
+
+
+// add to cart section
+//   const addToCartButtons = document.querySelectorAll(".add");
+//   addToCartButtons.forEach((button) => {
+//     button.addEventListener("click", (event) => {
+//       const product = event.target.closest(".product.card");
+//       const productName = product.querySelector(".name").textContent;
+//       const productPrice = product.querySelector(".price").textContent;
+//       cartItems.push({
+//         name: productName,
+//         price: productPrice,
+//       });
+//       displayConfirmation(productName);
+//       updateCartDisplay();
+//     });
+//   });
+//   function updateCartDisplay() {
+//     if (cartItems.length === 0) {
+//       cartDisplay.textContent = "Your cart is empty.";
+//     } else {
+//       cartDisplay.innerHTML =
+//         "<ul style='color: red'>" +
+//         cartItems
+//           .map((item) => `<li>${item.name} - ${item.price}</li>`)
+//           .join("") +
+//         "</ul>";
+//     }
+//   }
+//   function displayConfirmation(productName) {
+//     const confirmation = document.createElement("div");
+//     confirmation.className = "confirmation-message";
+//     confirmation.textContent = `${productName} has been added to the cart.`;
+//     document.body.appendChild(confirmation);
+//     setTimeout(() => {
+//       confirmation.remove();
+//     }, 3000);
+//   }
+// });
+// });
 // Cart
 //const addToCartButtons = document.querySelectorAll(".product--buy");
 

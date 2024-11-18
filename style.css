@@ -166,6 +166,7 @@ nav{
 }
 
 /* the section cart */
+/* 'this section as the Html and JavaScript Part doesnot Work' */
 .card {
   position: relative;
 }
@@ -184,7 +185,7 @@ nav{
   top: 50%;
   right: -20px;
 }
-
+/* 
 body .showCart .cart-shoping{
   inset: 0 0 0 auto;
 
@@ -259,7 +260,7 @@ body .showCart .container{
  }
 .cart-shoping{
   overflow: auto;
-}
+} */
 /* <!-- Section: #2: hero and intro --> */
 
 .hero{
@@ -712,8 +713,7 @@ transform: translateY(0px);
   }
 }
 
-/* MODAL */
-.modal-cart {
+/* MODAL */.modal-cart {
   display: none; /* Hidden by default */
   position: fixed;
   z-index: 1;
@@ -758,6 +758,7 @@ transform: translateY(0px);
   text-decoration: none;
   cursor: pointer;
 }
+
 
 /* FOOTER */
 
