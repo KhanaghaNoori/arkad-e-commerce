@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cartItems = [];
   const cartDisplay = document.querySelector(".modal-cart-content p");
-  // Open the modal when the cart icon is clicked
+
   cartLink.addEventListener("click", (event) => {
     event.preventDefault();
     modal.style.display = "block"; 
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 10);
   });
 
-  // Close the modal when the close button is clicked
+ 
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("show"); 
     setTimeout(() => {
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300);
   });
 
-  // Close the modal when clicking outside the modal content
+ 
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.classList.remove("show");
