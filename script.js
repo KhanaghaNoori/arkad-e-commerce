@@ -92,9 +92,12 @@ function displaydealOfTheWeekProductList() {
     const eachProduct = document.createElement("li");
 
     eachProduct.innerHTML = `
+        <div class="product card">
       <img class="dotwimg" src="${product.image}" alt="${product.name}" />
-      <p class="dotwtext">${product.price}</p>
-      <button class="dotwbtt">Add to Cart</button>
+      <p class="product-name">${product.name}</p>
+      <p class="dotwtext product-price" >${product.price}</p>
+      <button class="dotwbtt product--buy">Add to Cart</button>
+       </div>
     `;
 
     productContainer.appendChild(eachProduct);
@@ -131,16 +134,18 @@ function displayElectronicsShopeProductList() {
     const eachProduct = document.createElement("div");
 
     eachProduct.innerHTML = `
+        <div class="product card">
          <div class="productdetail-img-bottom">
-                <h2 class="fonth2">${product.name}</h2>
-                <span class="pruduct-span">${product.price}</span>
+                <h2 class="fonth2 product-name">${product.name}</h2>
+                <span class="pruduct-span product-price">${product.price}</span>
                 <p class="pruducht-p">${product.description}</p>
                 <div class="cta">
                   <button class="learn-more">Learn more</button>
-                  <button class="add">Add to Cart</button>
+                  <button class="add product--buy">Add to Cart</button>
                 </div>
                 <img src="${product.image}" alt="${product.name}">
                </div>
+                </div>
     `;
 
     productContainer.appendChild(eachProduct);
@@ -207,17 +212,19 @@ const allproductListOfTheShop = [
 function displayClothingProductList() {
   const productContainer = document.querySelector("main section.shopping ul"); // Assuming the ul has a class of "products-list"
 
-  allproductListOfTheShop.forEach((allProduct) => {
+  allproductListOfTheShop.forEach((product) => {
     const eachProduct = document.createElement("li");
     eachProduct.classList.add("products");
 
     eachProduct.innerHTML = `
-      <img class="products-img" src="${allProduct.image}" alt="${allProduct.description}" />
+        <div class="product card">
+      <img class="products-img" src="${product.image}" alt="${product.description}"/>
       <div class="products-description">
-        <p>${allProduct.description}</p>
-        <span class="product-price">${allProduct.price}</span>
-        <button class="add">Buy Now</button>
+        <p class="product-name">${product.description}</p>
+        <span class="product-price">${product.price}</span>
+        <button class="add product--buy">Buy Now</button>
       </div>
+       </div>
     `;
 
     productContainer.appendChild(eachProduct);
@@ -278,6 +285,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartLink = document.getElementById("cartIcon");
   const closeBtn = document.querySelector(".modal-cart-close");
 
+  const cartItems = [];
+  const cartDisplay = document.querySelector(".modal-cart-content p");
   // Open the modal when the cart icon is clicked
   cartLink.addEventListener("click", (event) => {
     event.preventDefault(); // Prevent default link behavior
@@ -304,7 +313,45 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300);
     }
   });
+  // shopping section and add and buy
+
+  const addToCartButtons = document.querySelectorAll(".product--buy");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const product = event.target.closest(".product.card");
+      const productName = product.querySelector(".product-name").textContent;
+      const productPrice = product.querySelector(".product-price").textContent;
+      cartItems.push({
+        name: productName,
+        price: productPrice,
+      });
+      displayConfirmation(productName);
+      updateCartDisplay();
+    });
+  });
+  function updateCartDisplay() {
+    if (cartItems.length === 0) {
+      cartDisplay.textContent = "Your cart is empty.";
+    } else {
+      cartDisplay.innerHTML =
+        "<ul style='color: red'>" +
+        cartItems
+          .map((item) => `<li>${item.name} - ${item.price}</li>`)
+          .join("") +
+        "</ul>";
+    }
+  }
+  function displayConfirmation(productName) {
+    const confirmation = document.createElement("div");
+    confirmation.className = "confirmation-message";
+    confirmation.textContent = `${productName} has been added to the cart.`;
+    document.body.appendChild(confirmation);
+    setTimeout(() => {
+      confirmation.remove();
+    }, 3000);
+  }
 });
+
 
 
 
